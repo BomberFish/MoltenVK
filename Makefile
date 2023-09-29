@@ -11,7 +11,7 @@ ifdef XCPRETTY_PATH
 	OUTPUT_FMT_CMD = | tee "xcodebuild.log" | xcpretty -c
 else
 	# Use xcodebuild -quiet parameter
-	OUTPUT_FMT_CMD = -quiet
+	# OUTPUT_FMT_CMD = -quiet
 endif
 
 # Collect all variables defined on the command-line (eg: MVK_HIDE_VULKAN_SYMBOLS=1)

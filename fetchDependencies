@@ -108,7 +108,7 @@ BLD_VISIONOS_SIM=""
 BLD_MACOS=""
 BLD_SPECIFIED=""
 XC_CONFIG="Release"
-XC_BUILD_VERBOSITY="-quiet"
+XC_BUILD_VERBOSITY=""
 XC_USE_BCKGND=""
 XC_USE_ASAN="NO"
 XC_USE_TSAN="NO"
@@ -312,24 +312,24 @@ fi
 
 # ----------------- SPIRV-Cross -------------------
 
-echo
-echo ========== SPIRV-Cross ==========
-echo
+ echo
+ echo ========== SPIRV-Cross ==========
+ echo
 
-# When MoltenVK is built by something that already has
-# a copy of this repo, use it by creating a symlink.
+ # When MoltenVK is built by something that already has
+ # a copy of this repo, use it by creating a symlink.
 
-REPO_NAME=SPIRV-Cross
+ REPO_NAME=SPIRV-Cross
 
-if [ ! "$SPIRV_CROSS_ROOT" = "" ]; then
-	rm -rf ${REPO_NAME}
-	ln -sfn ${SPIRV_CROSS_ROOT} ${REPO_NAME}
-else
-	REPO_URL="https://github.com/js6i/${REPO_NAME}.git"
-	REPO_REV=$(cat "${EXT_REV_DIR}/${REPO_NAME}_repo_revision")
+ if [ ! "$SPIRV_CROSS_ROOT" = "" ]; then
+ 	rm -rf ${REPO_NAME}
+ 	ln -sfn ${SPIRV_CROSS_ROOT} ${REPO_NAME}
+ else
+ 	REPO_URL="https://github.com/BomberFish/${REPO_NAME}.git"
+ 	REPO_REV=$(cat "${EXT_REV_DIR}/${REPO_NAME}_repo_revision")
 
-	update_repo ${REPO_NAME} ${REPO_URL} ${REPO_REV}
-fi
+ 	update_repo ${REPO_NAME} ${REPO_URL} ${REPO_REV}
+ fi
 
 
 
